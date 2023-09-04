@@ -1,20 +1,20 @@
 package org.marvic.appFacturas.models;
 
 public class ItemsFactura {
-    private int amount;
+    private int quantity;
     private Producto product;
 
-    public ItemsFactura(int amount, Producto product) {
-        this.amount = amount;
+    public ItemsFactura(int quantity, Producto product) {
+        this.quantity = quantity;
         this.product = product;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public Producto getProduct() {
@@ -23,5 +23,13 @@ public class ItemsFactura {
 
     public void setProduct(Producto product) {
         this.product = product;
+    }
+
+    /***
+     * CalculateAmount
+     * @return float precio final productos
+     */
+    public float calculateAmount(){
+        return  this.quantity * this.product.getPrice();
     }
 }
