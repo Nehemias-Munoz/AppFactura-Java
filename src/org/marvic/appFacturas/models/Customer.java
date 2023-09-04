@@ -3,14 +3,14 @@ package org.marvic.appFacturas.models;
 /***
  * @author nehemiasmunoz
  */
-public class Cliente {
+public class Customer {
     private String name;
     private int rut;
 
-    public Cliente() {
+    public Customer() {
     }
 
-    public Cliente(String name, int rut) {
+    public Customer(String name, int rut) {
         this.name = name;
         this.rut = rut;
     }
