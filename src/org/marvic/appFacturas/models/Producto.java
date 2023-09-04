@@ -5,14 +5,16 @@ package org.marvic.appFacturas.models;
  */
 public class Producto {
     private int id;
+    private int lastId;
     private String name;
     private float price;
 
     public Producto() {
+        this.id = ++lastId;
     }
 
-    public Producto(int id, String name, float price) {
-        this.id = id;
+    public Producto(String name, float price) {
+        this();
         this.name = name;
         this.price = price;
     }
