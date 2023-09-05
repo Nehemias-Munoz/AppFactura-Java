@@ -1,10 +1,10 @@
 package org.marvic.appFacturas.models;
 
-public class ItemsFactura {
+public class ItemFactura {
     private int quantity;
-    private Producto product;
+    private Product product;
 
-    public ItemsFactura(int quantity, Producto product) {
+    public ItemFactura(int quantity, Product product) {
         this.quantity = quantity;
         this.product = product;
     }
@@ -17,11 +17,11 @@ public class ItemsFactura {
         this.quantity = quantity;
     }
 
-    public Producto getProduct() {
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(Producto product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 
