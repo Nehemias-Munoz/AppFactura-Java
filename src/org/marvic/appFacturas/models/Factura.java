@@ -98,15 +98,7 @@ public class Factura {
                 .append("\n");
         detail.append("\n#\t Nombre\tValor\tCant\tTotal\n");
         for (ItemFactura item:this.getItems()) {
-            detail.append(item.getProduct().getId())
-                    .append("\t")
-                    .append(item.getProduct().getName())
-                    .append("\t")
-                    .append(item.getProduct().getPrice())
-                    .append("\t")
-                    .append(item.getQuantity())
-                    .append("\t")
-                    .append(item.calculateAmount())
+            detail.append(item)
                     .append("\n");
         }
         detail.append("\nValor Total:")

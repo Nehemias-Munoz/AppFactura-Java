@@ -32,4 +32,11 @@ public class ItemFactura {
     public float calculateAmount(){
         return  this.quantity * this.product.getPrice();
     }
+
+    @Override
+    public String toString() {
+        return product +
+                "\t" + quantity +
+                "\t" + calculateAmount() ;
+    }
 }
