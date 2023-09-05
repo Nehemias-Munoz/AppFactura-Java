@@ -11,10 +11,11 @@ public class Factura {
     private String description;
     private Date date;
     private Customer customer;
-    private ArrayList<ItemsFactura> item;
+    private ArrayList<ItemFactura> item;
 
     public Factura() {
         this.id = ++lastId;
+        this.item = new ArrayList<>();
     }
 
     public Factura( String description, Date date) {
@@ -51,7 +52,7 @@ public class Factura {
         this.customer = customer;
     }
 
-    public ArrayList<ItemsFactura> getItems() {
+    public ArrayList<ItemFactura> getItems() {
         return item;
     }
 
@@ -60,7 +61,7 @@ public class Factura {
      * añade un elemtento de tipo ItemsFactura a la lista
      * @param item
      */
-    public void addItemFactura(ItemsFactura item){
+    public void addItemFactura(ItemFactura item){
          this.item.add(item);
     }
 
@@ -71,7 +72,7 @@ public class Factura {
      */
     public float calculateTotal(){
         float total = 0.0f;
-        for (ItemsFactura item: getItems()) {
+        for (ItemFactura item: getItems()) {
             total += item.calculateAmount();
         }
         return total;
@@ -95,8 +96,8 @@ public class Factura {
         detail.append("\nDescripcion: ")
                 .append(this.description)
                 .append("\n");
-        detail.append("\n #\t Nombre\tValor\tCantidad\tTotal\n");
-        for (ItemsFactura item:this.getItems()) {
+        detail.append("\n#\t Nombre\tValor\tCant\tTotal\n");
+        for (ItemFactura item:this.getItems()) {
             detail.append(item.getProduct().getId())
                     .append("\t")
                     .append(item.getProduct().getName())
